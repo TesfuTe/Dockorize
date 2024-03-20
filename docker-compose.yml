@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   CalculatorService:
-    image: calculator
+    image: tesfumbl/calculator
     # image: calculator:latest # if you want to use the latest tag
     ports:
       - 80:80
