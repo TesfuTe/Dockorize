@@ -21,26 +21,26 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t yourusername/yourimage:latest .
+      run: docker build -t tesfumbl/calculator:latest .
       
     - name: Push Docker image to Docker Hub
-      run: docker push yourusername/yourimage:latest
+      run: docker push tesfumbl/calculator:latest
 
-  deploy:
-    name: Deploy with Docker Compose
-    runs-on: ubuntu-latest
+  # deploy:
+  #   name: Deploy with Docker Compose
+  #   runs-on: ubuntu-latest
 
-    needs: build
+  #   needs: build
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v2
 
-    - name: Install Docker Compose
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y docker-compose
+  #   - name: Install Docker Compose
+  #     run: |
+  #       sudo apt-get update
+  #       sudo apt-get install -y docker-compose
 
-    - name: Deploy with Docker Compose
-      run: |
-        docker-compose -f docker-compose.yml up -d
+  #   - name: Deploy with Docker Compose
+  #     run: |
+  #       docker-compose -f docker-compose.yml up -d
