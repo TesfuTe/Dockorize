@@ -12,3 +12,8 @@ def add_numbers(a: int, b: int):
 @app.get("/subtract_numbers")
 def subtract_numbers(a: int, b: int):
     return {f"Difference of {a} and {b} is": a - b}
+
+
+@app.get("/multiply_numbers")
+def multiply_numbers(a: int, b: int):
+    return {f"Product of {a} and {b} is": a * b}
