@@ -1,0 +1,9 @@
+version: '1.0.0'
+
+services:
+  CalculatorService:
+    image: calculator
+    # image: calculator:latest # if you want to use the latest tag
+    ports:
+      - 80:80
+    restart: always
